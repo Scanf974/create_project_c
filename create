@@ -1,0 +1,23 @@
+#!/bin/sh
+
+mkdir $1
+if [ $? == 0 ]
+then
+	cd $1
+	mkdir libft
+	mkdir includes
+	cp -rf ~/creating/libft .
+	cp -rf ~/creating/includes .
+	vim $1.make
+	mv $1.make Makefile
+	sed "s/thename/$1/g" Makefile > te
+	cat te > Makefile
+	rm te
+	touch main.c
+	echo "#include <$1.h>\n" >> main.c
+	echo "int\t\tmain(void)\n{\n\t\\n\treturn(0);\n}" >> main.c
+	cd includes
+	vim $1.h
+	cd ..
+	vim main.c
+fi

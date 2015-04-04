@@ -1,0 +1,8 @@
+:insert
+#ifndef
+# define
+
+# include <libft.h>
+
+#endif
+.
