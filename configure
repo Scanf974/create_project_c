@@ -25,5 +25,5 @@ then
 	echo "function create() {$HOME/bin/create \$* && cd \$*}" >> ~/.zshrc
 	echo "function vim() {\$HOME/bin/vim \$*}" >> ~/.zshrc
 else
-	echo "Where is your libft?"
+	echo "Give me the path of the libft"
 fi
