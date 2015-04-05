@@ -19,7 +19,7 @@ then
 			echo "$*" | grep "main.c$" >& /dev/null
         	if [ $? == 0 ]
 			then
-				echo "int\tmain(void)\n{\n\t\n\treturn(0);\n}" >> main.c
+				echo "int\t\tmain(void)\n{\n\t\n\treturn(0);\n}" >> main.c
 			fi
 			vim $*
 		fi
