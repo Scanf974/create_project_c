@@ -2,10 +2,11 @@
 
 touch ~/.vimrc
 echo "" >> ~/.vimrc
+echo "autocmd bufnewfile *.c so ~/.vim/templates/header_c.txt" >> ~/.vimrc
 echo "autocmd bufnewfile *.h so ~/.vim/templates/header_h.txt" >> ~/.vimrc
-echo "autocmd bufnewfile *.h exe \"0,\" . 3 . \"g/ndef/s//ndef \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
-echo "autocmd bufnewfile *.h exe \"0,\" . 3 . \"g/define/s//define \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
-echo "autocmd bufnewfile *.h exe \"0,\" . 5 . \"g/libft/s//libft\"" >> ~/.vimrc
+echo "autocmd bufnewfile *.h exe \"10,\" . 15 . \"g/ndef/s//ndef \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
+echo "autocmd bufnewfile *.h exe \"10,\" . 15 . \"g/define/s//define \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
+echo "autocmd bufnewfile *.h exe \"10,\" . 18 . \"g/libft/s//libft\"" >> ~/.vimrc
 echo "autocmd bufnewfile *.make so ~/.vim/templates/header_make.txt" >> ~/.vimrc
 
 mkdir ~/.vim > /dev/null || env -i
