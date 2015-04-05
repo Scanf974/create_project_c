@@ -18,6 +18,7 @@ then
 
 	mkdir ~/bin > /dev/null || env -i
 	sed "s/FOLDER/$1/g" create.sh > create
+	chmod 744 create
 	cp create ~/bin
 	cp vim ~/bin
 
