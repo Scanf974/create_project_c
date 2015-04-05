@@ -16,6 +16,7 @@ cp -rf templates/* ~/.vim/templates/
 
 mkdir ~/bin > /dev/null || env -i
 cp create ~/bin
+cp vim ~/bin
 
 echo "function create() {$HOME/bin/create \$* && cd \$*}" >> ~/.zshrc
 echo "function vim() {\$HOME/bin/vim \$*}" >> ~/.zshrc
