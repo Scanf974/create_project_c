@@ -6,8 +6,8 @@ then
 	cd $1
 	mkdir libft
 	mkdir includes
-	cp -rf ~/pd/libft .
-	cp -rf ~/pd/includes .
+	cp -rf ~/FOLDER/libft .
+	cp -rf ~/FOLDER/includes .
 	vim $1.make
 	mv $1.make Makefile
 	sed "s/thename/$1/g" Makefile > te
