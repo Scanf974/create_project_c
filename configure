@@ -1,22 +1,30 @@
 #!/bin/sh
 
-touch ~/.vimrc
-echo "" >> ~/.vimrc
-echo "autocmd bufnewfile *.c so ~/.vim/templates/header_c.txt" >> ~/.vimrc
-echo "autocmd bufnewfile *.h so ~/.vim/templates/header_h.txt" >> ~/.vimrc
-echo "autocmd bufnewfile *.h exe \"10,\" . 15 . \"g/ndef/s//ndef \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
-echo "autocmd bufnewfile *.h exe \"10,\" . 15 . \"g/define/s//define \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
-echo "autocmd bufnewfile *.h exe \"10,\" . 18 . \"g/libft/s//libft\"" >> ~/.vimrc
-echo "autocmd bufnewfile *.make so ~/.vim/templates/header_make.txt" >> ~/.vimrc
+if [ $1 ]
+then
+	touch ~/.vimrc
+	echo "" >> ~/.vimrc
+	echo "autocmd bufnewfile *.c so ~/.vim/templates/header_c.txt" >> ~/.vimrc
+	echo "autocmd bufnewfile *.h so ~/.vim/templates/header_h.txt" >> ~/.vimrc
+	echo "autocmd bufnewfile *.h exe \"10,\" . 15 . \"g/ndef/s//ndef \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
+	echo "autocmd bufnewfile *.h exe \"10,\" . 15 . \"g/define/s//define \" .toupper(expand(\"%:r\")).expand(\"_H\")" >> ~/.vimrc
+	echo "autocmd bufnewfile *.h exe \"10,\" . 18 . \"g/libft/s//libft\"" >> ~/.vimrc
+	echo "autocmd bufnewfile *.make so ~/.vim/templates/header_make.txt" >> ~/.vimrc
 
-mkdir ~/.vim > /dev/null || env -i
-mkdir ~/.vim/templates > /dev/null || env -i
+	mkdir ~/.vim > /dev/null || env -i
+	mkdir ~/.vim/templates > /dev/null || env -i
 
-cp -rf templates/* ~/.vim/templates/
+	cp -rf templates/* ~/.vim/templates/
 
-mkdir ~/bin > /dev/null || env -i
-cp create ~/bin
-cp vim ~/bin
+	mkdir ~/bin > /dev/null || env -i
+	sed "s/FOLDER/$1/g" create > te
+	cat te > create
+	rm te
+	cp create ~/bin
+	cp vim ~/bin
 
-echo "function create() {$HOME/bin/create \$* && cd \$*}" >> ~/.zshrc
-echo "function vim() {\$HOME/bin/vim \$*}" >> ~/.zshrc
+	echo "function create() {$HOME/bin/create \$* && cd \$*}" >> ~/.zshrc
+	echo "function vim() {\$HOME/bin/vim \$*}" >> ~/.zshrc
+else
+	echo "Where is your libft?"
+fi
