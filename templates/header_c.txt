@@ -1,0 +1,5 @@
+:Stdheader
+:insert
+#include <>
+.
+:wq

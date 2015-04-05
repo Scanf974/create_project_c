@@ -1,3 +1,4 @@
+:Stdheader
 :insert
 CC = gcc
 NAME = thename

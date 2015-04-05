@@ -17,3 +17,4 @@ mkdir ~/bin > /dev/null || env -i
 cp create ~/bin
 
 echo "function create() {$HOME/bin/create \$* && cd \$*}" >> ~/.zshrc
+echo "function vim() {\$HOME/bin/vim \$*}" >> ~/.zshrc
